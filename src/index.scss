@@ -1,0 +1,87 @@
+$bg-color:rgb(14,46,71);
+$logo-const: 75px;
+$top-distance:3;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    background-color: $bg-color;
+    opacity: 0.7;
+    position: relative;
+    .company_logo{
+        margin: 20px;
+        border: 2px solid white;
+        border-right: none;
+        width: $logo-const;
+        height: $logo-const;
+        position: relative;
+        &::before, &::after{
+            content: "";
+            position: absolute;
+            right: 0;
+            height: $logo-const / 3;
+            border-right: 2px solid white;
+        }
+        &::after{
+            bottom: 0;
+        }
+        h2{
+            position: absolute;
+            top: $logo-const / $top-distance;
+            right: 0;
+            left: $logo-const/2.1;
+            bottom: 0;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
+            letter-spacing: 4px;
+            font-size: 1rem;
+            color: white;
+            opacity: 1;
+        }
+    }
+    ul{
+        list-style: none;
+        position: absolute;
+        right: 0;
+        top: 10px;
+        display: flex;
+        align-items: center;
+        font-family: "Poppins";
+        margin: $logo-const/4;
+        a{
+            padding: $logo-const 0;
+            text-decoration: none;
+            color: white;
+            margin:20px;
+        } 
+    }
+    margin-bottom: 20px;
+}
+.main{
+    display: grid;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    canvas{
+        width: 100vw;
+        height: auto;
+    }
+    h5{
+        display: block;
+    }
+}
+body{
+    background-color: #000;
+}
+@media only screen and(max-width:700px){
+    video{
+        display: none;
+    }
+    body{
+        background-image: url("./mobile_bkg.webp");
+        background-size: 100vw;
+    }
+}

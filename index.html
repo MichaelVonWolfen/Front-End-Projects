@@ -9,26 +9,52 @@
     <title>Skyline</title>
 </head>
 <body>
+    <video autoplay muted loop id="myVideo">
+        <source src="./src/file.mp4" type="video/mp4">
+      </video>
     <header>
         <div class="company_logo"><h2>Skyline.</h2></div>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Subscribe</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#subscribe">Subscribe</a></li>
         </ul>
     </header>
-    <div class="main">
+    <div class="main" id="home">
         <h5>OUR NEW SITE IS</h5>
+        <canvas id="canvas"></canvas>
         <h1>Coming Soon</h1>
         <h5>STAY TUNED!</h5>
         <button><i class="fas fa-long-arrow-alt-down"></i></button>
     </div>
     <div class="right_side">
-        <ul class="center_right">
+        <ul class="center_right light">
             <li><i class="fab fa-facebook-f"></i></li>
             <li><i class="fab fa-twitter"></i></li>
             <li><i class="fab fa-instagram"></i></li>
         </ul>
         <button class="bottom_right"><i class="fas fa-comment-dots"></i></button>
+    </div>
+    <div class="about">
+        <h1>About Skyline</h1>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis vero nemo omnis pariatur nulla ipsam dignissimos ipsa fugit. Itaque, neque commodi. Ab aperiam sed sapiente nihil illo magnam in officiis facere ut. Similique assumenda fugiat molestias deleniti ratione consequatur nobis porro pariatur fuga aliquid. At odit, numquam ipsa doloremque placeat ducimus nisi porro sit debitis fugit ipsum, temporibus, molestiae fugiat voluptates eaque. Sint ex facere suscipit molestiae esse debitis laborum at dolore sequi itaque libero provident aut vitae ipsa eius nulla illo modi impedit sunt quia, dolorum amet corporis! Nemo reiciendis, fugit sunt laboriosam ut dolorum fugiat praesentium tempora earum.
+        </p>
+        <p>Subscribe to be the first to know about our launch</p>
+        <div id="subscribe" class="subscribe">
+            <label for="email">Email *</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email here">
+            <button class="subscribe">Subscribe Now</button>
+        </div>
+    </div>
+    <div class="footer">
+        <ul class="center_right">
+            <li><i class="fab fa-facebook-f"></i></li>
+            <li><i class="fab fa-twitter"></i></li>
+            <li><i class="fab fa-instagram"></i></li>
+        </ul>
+        <span>© 2023 by Skyline</span>        
+        <button><i class="fas fa-long-arrow-alt-up"></i></button>
+        <span>Proudly copied by MichaelVonWolfen. C.reated with Wix.com</span>
     </div>
     <script src="https://kit.fontawesome.com/56dbf8d347.js" crossorigin="anonymous"></script>
     <script src="./src/index.js"></script>

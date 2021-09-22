@@ -1,1 +1,108 @@
-/* No CSS *//*# sourceMappingURL=index.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #0e2e47;
+  opacity: 0.7;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+header .company_logo {
+  margin: 20px;
+  border: 2px solid white;
+  border-right: none;
+  width: 75px;
+  height: 75px;
+  position: relative;
+}
+
+header .company_logo::before, header .company_logo::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 25px;
+  border-right: 2px solid white;
+}
+
+header .company_logo::after {
+  bottom: 0;
+}
+
+header .company_logo h2 {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  left: 35.71429px;
+  bottom: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  letter-spacing: 4px;
+  font-size: 1rem;
+  color: white;
+  opacity: 1;
+}
+
+header ul {
+  list-style: none;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Poppins";
+  margin: 18.75px;
+}
+
+header ul a {
+  padding: 75px 0;
+  text-decoration: none;
+  color: white;
+  margin: 20px;
+}
+
+.main {
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main canvas {
+  width: 100vw;
+  height: auto;
+}
+
+.main h5 {
+  display: block;
+}
+
+body {
+  background-color: #000;
+}
+
+@media only screen and (max-width: 700px) {
+  video {
+    display: none;
+  }
+  body {
+    background-image: url("./mobile_bkg.webp");
+    background-size: 100vw;
+  }
+}
+/*# sourceMappingURL=index.css.map */
