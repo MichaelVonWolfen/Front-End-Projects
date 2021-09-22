@@ -1,260 +1,264 @@
-$bg-color:rgb(14,46,71);
+$bg-color: rgb(14, 46, 71);
 $logo-const: 75px;
-$top-distance:3;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;600&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+$top-distance: 3;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;600&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
-body { 
-    background: url("./mobile_bkg.webp") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    position: relative;
+body {
+	background: url("./mobile_bkg.webp") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position: relative;
 }
-header{
-    display: flex;
-    position: sticky;
-    top:0;
-    // z-index: 1;
-    background-color: rgba(255,255,255,0.1);
-    .company_logo{
-        margin: 20px;
-        border: 2px solid white;
-        border-right: none;
-        width: $logo-const;
-        height: $logo-const;
-        position: relative;
-        &::before, &::after{
-            content: "";
-            position: absolute;
-            right: 0;
-            height: $logo-const / 3;
-            border-right: 2px solid white;
-        }
-        &::after{
-            bottom: 0;
-        }
-        h2{
-            position: absolute;
-            top: $logo-const / $top-distance;
-            right: 0;
-            left: $logo-const/2.1;
-            bottom: 0;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 200;
-            letter-spacing: 4px;
-            font-size: 1rem;
-            color: white;
-            opacity: 1;
-        }
-    }
-    ul{
-        list-style: none;
-        position: absolute;
-        right: 0;
-        top: 25px;
-        display: flex;
-        align-items: center;
-        font-family: "Poppins";
-        margin: $logo-const/4;
-        a{
-            padding: $logo-const 0;
-            text-decoration: none;
-            color: white;
-            margin:20px;
-        } 
-    }
+header {
+	display: flex;
+	position: sticky;
+	top: 0;
+	// z-index: 1;
+	background-color: rgba(255, 255, 255, 0.1);
+	.company_logo {
+		margin: 20px;
+		border: 2px solid white;
+		border-right: none;
+		width: $logo-const;
+		height: $logo-const;
+		position: relative;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			right: 0;
+			height: $logo-const / 3;
+			border-right: 2px solid white;
+		}
+		&::after {
+			bottom: 0;
+		}
+		h2 {
+			position: absolute;
+			top: $logo-const / $top-distance;
+			right: 0;
+			left: $logo-const/2.1;
+			bottom: 0;
+			font-family: "Poppins", sans-serif;
+			font-weight: 200;
+			letter-spacing: 4px;
+			font-size: 1rem;
+			color: white;
+			opacity: 1;
+		}
+	}
+	ul {
+		list-style: none;
+		position: absolute;
+		right: 0;
+		top: 25px;
+		display: flex;
+		align-items: center;
+		font-family: "Poppins";
+		margin: $logo-const/4;
+		a {
+			padding: $logo-const 0;
+			text-decoration: none;
+			color: white;
+			margin: 20px;
+		}
+	}
 }
-.container{
-   
-    // background-color: $bg-color;
-    font-family: "Poppins";
-    color: white;
-    opacity: 0.9;
-    .main{
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        
-        h5{
-            letter-spacing: 0.15rem;
-            margin: 5rem 0;
-            font-weight: 200;
-            font-size: 1.5rem;
-        }
-        h1{
-            letter-spacing: 0.25rem;
-            font-size: 6rem;
-            text-transform: uppercase;
-        }
-    }
+.container {
+	// background-color: $bg-color;
+	font-family: "Poppins";
+	color: white;
+	opacity: 0.9;
+	.main {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		h5 {
+			letter-spacing: 0.15rem;
+			margin: 5rem 0;
+			font-weight: 200;
+			font-size: 1.5rem;
+		}
+		h1 {
+			letter-spacing: 0.25rem;
+			font-size: 6rem;
+			text-transform: uppercase;
+		}
+	}
 }
-.btn{
-    margin: 100px;
-    background:none;
-    border: none;
-    width: 50px;
-    height: 50px;
-    font-size: 2rem;
-    outline: 1px solid white;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &:hover{
-        background:$bg-color;
-        transition: ease-in 0.2s;
-        outline: none;
-        cursor: pointer;
-    }
+.btn {
+	margin: 100px;
+	background: none;
+	border: none;
+	width: 50px;
+	height: 50px;
+	font-size: 2rem;
+	outline: 1px solid white;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&:hover {
+		background: $bg-color;
+		transition: ease-in 0.2s;
+		outline: none;
+		cursor: pointer;
+	}
 }
-.send_email a{
-    position: fixed;
-    bottom: 20px;
-    right: 10px;
-    font-size: 2rem;
-    background-color: white;
-    padding: $logo-const 0;
-    text-decoration: none;
-    margin:0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    color: $bg-color;
-    &:hover{
-        background-color: $bg-color;
-        color: white;
-        transition: ease-in 0.2s;
-    }
+.send_email a {
+	position: fixed;
+	bottom: 20px;
+	right: 10px;
+	font-size: 2rem;
+	background-color: white;
+	padding: $logo-const 0;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	color: $bg-color;
+	&:hover {
+		background-color: $bg-color;
+		color: white;
+		transition: ease-in 0.2s;
+	}
 }
-.about{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: $bg-color;
-    p{
-        max-width: 700px;
-        padding: 2rem;
-        text-align: center;
-    }
-    h2{
-        padding: 2rem;
-        font-size: 1rem;
-        text-align: center;
-        font-weight: 600;
-    }
-    .subscribe{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        width: 300px;
-        label{
-            padding: 5px 0;
-        }
-        input[type="email"]{
-            font-size: 1rem;
-            padding: 3px;
-            color: $bg-color;
-            width: auto;
-            font-family: "Poppins";
-        }
-        .sub{
-            width: 100%;
-            margin: 10px 0;
-            padding: 5px;
-            font-size: 1rem;
-            font-family: "Poppins";
-            font-weight: 600;
-            color: white;
-            background-color: $bg-color;
-            cursor: pointer;
-            
-            &:hover{
-                transition: ease-in 0.2s;
-                color: $bg-color;
-                background-color: white;
-            }
-        }
-    }
+.about {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: $bg-color;
+	p {
+		max-width: 700px;
+		padding: 2rem;
+		text-align: center;
+	}
+	h2 {
+		padding: 2rem;
+		font-size: 1rem;
+		text-align: center;
+		font-weight: 600;
+	}
+	.subscribe {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		width: 300px;
+		label {
+			padding: 5px 0;
+		}
+		input[type="email"] {
+			font-size: 1rem;
+			padding: 3px;
+			color: $bg-color;
+			width: auto;
+			font-family: "Poppins";
+		}
+		.sub {
+			width: 100%;
+			margin: 10px 0;
+			padding: 5px;
+			font-size: 1rem;
+			font-family: "Poppins";
+			font-weight: 600;
+			color: white;
+			background-color: $bg-color;
+			cursor: pointer;
+
+			&:hover {
+				transition: ease-in 0.2s;
+				color: $bg-color;
+				background-color: white;
+			}
+		}
+	}
 }
-.footer{
-    color: $bg-color;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    .bottom_icons{
-        list-style: none;
-        display: flex;
-        li{
-            margin: 50px;
-            font-size: 3rem;
-            a{
-                color: $bg-color;
-                text-emphasis: none;
-            }
-        }
-    }
-    .btn{
-        color:$bg-color;
-        padding: 0;
-        margin: 20px;
-        outline: 1px solid $bg-color;
-        a{
-            text-emphasis: none;
-            color: inherit;
-            width: 100%;
-        }
-        &:hover{
-            transition: ease-in 0.2s;
-            color: white;
-            background-color: $bg-color;
-        }
-    }
+.footer {
+	color: $bg-color;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	.bottom_icons {
+		list-style: none;
+		display: flex;
+		li {
+			margin: 50px;
+			font-size: 3rem;
+			a {
+				color: $bg-color;
+				text-emphasis: none;
+			}
+		}
+	}
+	.btn {
+		color: $bg-color;
+		padding: 0;
+		margin: 20px;
+		outline: 1px solid $bg-color;
+		a {
+			text-emphasis: none;
+			color: inherit;
+			width: 100%;
+		}
+		&:hover {
+			transition: ease-in 0.2s;
+			color: white;
+			background-color: $bg-color;
+		}
+	}
 }
-.center_right{
-    position: fixed;
-    right:0;
-    top:calc(50% - 30px);
-    list-style: none;
-    a{
-        color: white;
-        text-decoration: none;
-    }
-    li{
-        margin: 20px;
-    }
+.center_right {
+	position: fixed;
+	right: 0;
+	top: calc(50% - 30px);
+	list-style: none;
+	a {
+		color: white;
+		text-decoration: none;
+	}
+	li {
+		margin: 20px;
+	}
 }
 #myVideo {
-    position: fixed;
-    right: 0;
-    top: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
+	position: fixed;
+	right: 0;
+	top: 0;
+	min-width: 100%;
+	min-height: 100%;
+	z-index: -1;
 }
-.content{
-    background: rgb(14,46,71);
-    background: linear-gradient(180deg, rgba(14,46,71,0.8) 0%, rgba(255,255,255,1) 70%);
+.content {
+	background: rgb(14, 46, 71);
+	background: linear-gradient(
+		180deg,
+		rgba(14, 46, 71, 0.8) 0%,
+		rgba(255, 255, 255, 1) 70%
+	);
 }
-@media only screen and(max-width:700px){
-    video{
-        display: none;
-    }
-    .center_right{
-        display: none;
-    }
+@media only screen and(max-width:700px) {
+	video {
+		display: none;
+	}
+	.center_right {
+		display: none;
+	}
 }
