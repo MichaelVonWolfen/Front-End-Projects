@@ -5,6 +5,8 @@ $top-distance:3;
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 body { 
     background: url("./mobile_bkg.webp") no-repeat center center fixed; 
@@ -12,14 +14,14 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    position: relative;
 }
 header{
     display: flex;
-    background-color: $bg-color;
-    opacity: 0.85;
-    // position: sticky;
-    // top:0;
+    position: sticky;
+    top:0;
     // z-index: 1;
+    background-color: rgba(255,255,255,0.1);
     .company_logo{
         margin: 20px;
         border: 2px solid white;
@@ -55,7 +57,7 @@ header{
         list-style: none;
         position: absolute;
         right: 0;
-        top: 10px;
+        top: 25px;
         display: flex;
         align-items: center;
         font-family: "Poppins";
@@ -69,11 +71,10 @@ header{
     }
 }
 .container{
-    background: rgb(14,46,71);
-    background: linear-gradient(180deg, rgba(14,46,71,1) 0%, rgba(255,255,255,1) 70%);
+   
+    // background-color: $bg-color;
     font-family: "Poppins";
     color: white;
-    background-color: $bg-color;
     opacity: 0.9;
     .main{
         display: flex;
@@ -84,13 +85,13 @@ header{
         
         h5{
             letter-spacing: 0.15rem;
-            margin: 20px 0 0 0;
+            margin: 5rem 0;
             font-weight: 200;
             font-size: 1.5rem;
         }
         h1{
             letter-spacing: 0.25rem;
-            font-size: 4rem;
+            font-size: 6rem;
             text-transform: uppercase;
         }
     }
@@ -144,13 +145,15 @@ header{
     justify-content: center;
     color: $bg-color;
     p{
+        max-width: 700px;
         padding: 2rem;
         text-align: center;
     }
     h2{
         padding: 2rem;
+        font-size: 1rem;
         text-align: center;
-        font-weight: 200;
+        font-weight: 600;
     }
     .subscribe{
         display: flex;
@@ -209,9 +212,11 @@ header{
         color:$bg-color;
         padding: 0;
         margin: 20px;
+        outline: 1px solid $bg-color;
         a{
             text-emphasis: none;
             color: inherit;
+            width: 100%;
         }
         &:hover{
             transition: ease-in 0.2s;
@@ -220,8 +225,30 @@ header{
         }
     }
 }
-body{
-    background-color: #000;
+.center_right{
+    position: fixed;
+    right:0;
+    top:calc(50% - 30px);
+    list-style: none;
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    li{
+        margin: 20px;
+    }
+}
+#myVideo {
+    position: fixed;
+    right: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+.content{
+    background: rgb(14,46,71);
+    background: linear-gradient(180deg, rgba(14,46,71,0.8) 0%, rgba(255,255,255,1) 70%);
 }
 @media only screen and(max-width:700px){
     video{
@@ -230,5 +257,4 @@ body{
     .center_right{
         display: none;
     }
-    
 }
