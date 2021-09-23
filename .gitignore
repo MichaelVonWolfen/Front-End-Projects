@@ -1,3 +1,4 @@
 *.map
 .ideea
 .vscode
+node_modules
