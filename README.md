@@ -1,3 +1,3 @@
 #Skyline
 
-![img](/img/Screenshot (101).png)
+![img](./img/Screenshot (101).png)
