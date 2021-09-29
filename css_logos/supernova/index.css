@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: #243D83;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  width: 400px;
+  height: 300px;
+}
+.container .x1, .container .x2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #6592CF;
+  height: 100px;
+  width: 220px;
+  border-radius: 130px;
+}
+.container .x2 {
+  transform: rotate(90deg);
+}
+.container .square {
+  width: 120px;
+  height: 120px;
+  background: #243D83;
+  position: relative;
+  border-radius: -30px;
+}
+.container .square::before {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #EEB850;
+}
+
+/*# sourceMappingURL=index.css.map */

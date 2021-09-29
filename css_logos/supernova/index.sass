@@ -1,0 +1,49 @@
+$bg-color: #243D83
+$petalsColor: #6592CF
+$bulbColor: #EEB850
+$square-size: 120px
+$x-width:220px
+$circle-size: 60px
+*
+    padding: 0
+    margin: 0
+    background-color: $bg-color
+body
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 100vh
+.container
+    display: flex
+    align-items: center
+    justify-content: center
+    transform: rotate(45deg)
+    width: 400px
+    height: 300px
+
+    .x1, .x2
+        display: flex
+        align-items: center
+        justify-content: center
+        background: $petalsColor
+        height: $square-size - 20px
+        width: $x-width
+        border-radius: 130px
+    .x2
+        transform: rotate(90deg)
+    .square
+        width: $square-size
+        height: $square-size
+        background: $bg-color
+        position: relative
+        border-radius: -30px
+        &::before
+            position: absolute
+            content: ""
+            width: $circle-size
+            height: $circle-size
+            border-radius: 50%
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            background: $bulbColor
