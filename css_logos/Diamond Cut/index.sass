@@ -1,0 +1,35 @@
+*
+  margin: 0
+  padding: 0
+
+body
+  background: #F3AC3C
+  height: 100vh
+  display: grid
+  justify-items: center
+  align-content: center
+
+  .a
+    background: #1A4341
+    height: 30px
+    width: 30px
+    transform: rotate(45deg)
+    margin: 15px
+    box-shadow: 0 0 0 35px #F3AC3C, 0 0 0 65px #998235
+    top: 0
+    bottom: 0
+    position: relative
+
+    &::before, &::after
+      content: ""
+      background: #F3AC3C
+      width: 30px
+      height: 40px
+      position: absolute
+      margin: 15px
+      top: -81px
+      left: -10px
+    &::after
+      transform: rotate(90deg)
+      top: -10px
+      left: -80px

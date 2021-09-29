@@ -1,0 +1,35 @@
+$bg-color: #191919
+$cherry:#714B67
+$circle_color:#8F8F8F
+*
+  margin: 0
+  padding: 0
+
+body
+  height: 100vh
+  background-color: #191919
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: row
+  overflow: hidden
+
+  .circle
+    margin: 0 5px
+    background-color: $bg-color
+    border: 25px solid $circle_color
+    width: 75px
+    height: 75px
+    border-radius: 50%
+    position: relative
+  .cherry_color
+    border-color: $cherry
+  .with_pseudo::before
+    content: ""
+    width: 25px!important
+    height: 90px!important
+    position: absolute
+    border-radius: 30px
+    top: -50px
+    right: -25px
+    background-color: $circle_color

@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: #191919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  overflow: hidden;
+}
+body .circle {
+  margin: 0 5px;
+  background-color: #191919;
+  border: 25px solid #8F8F8F;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  position: relative;
+}
+body .cherry_color {
+  border-color: #714B67;
+}
+body .with_pseudo::before {
+  content: "";
+  width: 25px !important;
+  height: 90px !important;
+  position: absolute;
+  border-radius: 30px;
+  top: -50px;
+  right: -25px;
+  background-color: #8F8F8F;
+}
+
+/*# sourceMappingURL=index.css.map */
