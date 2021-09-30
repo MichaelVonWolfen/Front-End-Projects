@@ -1,0 +1,112 @@
+$colorBG: #998235
+$color1: #1A4341
+$color2: #0B2429
+$color3: white
+$ear_margin: -20px
+$width: 40px
+$width_half: 20px
+@keyframes blink
+  0%
+    height: 0
+  100%
+    height: 100%
+*
+  margin: 0
+  padding: 0
+body
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: $colorBG
+.container
+  width: 400px
+  height: 300px
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+
+.head
+  z-index: 1
+  background-color: $color1
+  width: 180px
+  height: 180px
+  border-radius: 50%
+  display: flex
+  justify-content: center
+  align-items: center
+
+  &::before
+    content: ""
+    position: absolute
+    width: 80px
+    height: 40px
+    background-color: transparent
+    border-top-left-radius: 110px
+    border-top-right-radius: 110px
+    border: $width_half solid $color3
+    border-bottom: 0
+    top: 63%
+  &::after
+    content: ""
+    position: absolute
+    width: $width
+    height: 150px
+    background-color: $color2
+    top: 60%
+    border-radius: 50px
+.ear
+  height: 180px
+  width: 80px
+  background-color: $color1
+  border-radius: 80% 80% 80% 80% / 80% 80% 80% 80%
+  position: relative
+
+  &::before
+    content: ""
+    height: 160px
+    width: 60px
+    background-color: $color2
+    position: absolute
+    top: 10px
+    border-radius: 80% 80% 80% 80% / 80% 80% 80% 80%
+
+.left
+  margin-right: $ear_margin
+
+  &::before
+    right: 0
+
+.right
+  margin-left: $ear_margin
+
+  &::before
+    left: 0
+
+.eye
+  margin: 0 10px
+  width: $width
+  height: $width
+  position: relative
+  background-color: $colorBG
+  border-radius: 50%
+
+  &::before, &::after
+    position: absolute
+    content: ""
+
+  &::after
+    width: $width
+    background-color: $color1
+    height: $width_half
+    animation: example 3s ease-in-out infinite both
+
+  &::before
+    background-color: $color2
+    width: $width_half
+    height: $width_half
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    border-radius: 50%
