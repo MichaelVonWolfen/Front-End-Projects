@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: #6592CF;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+div {
+  background-color: #243D83;
+  width: 300px;
+  height: 150px;
+  position: relative;
+}
+div::before {
+  position: absolute;
+  content: "";
+  background-color: #EEB850;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 50px #243D83, 0 0 0 100px #6592CF;
+}
+
+/*# sourceMappingURL=index.css.map */
