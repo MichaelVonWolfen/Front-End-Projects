@@ -1,0 +1,84 @@
+$color_bg: #191919
+$color_face: #FE5F55
+$color_snot: #A64942
+*
+    margin: 0
+    padding: 0
+body
+    background-color: $color_bg
+    width: 100vw
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+.container
+    // width: 400px
+    // height: 300px
+    position: relative
+    width: 130px
+    height: 170px
+    .head
+        width: 100%
+        height: 100%
+        border-radius: 60px
+        position: relative
+        background-color: $color_face
+        z-index: 2
+    .ears
+        width: 100%
+        height: 100%
+        position: absolute
+        z-index: 1
+        &::after, &::before
+            content: ""
+            position: absolute
+            background-color: black
+            width: 10px
+            height: 25px
+            top: -1px
+            border-radius: 60%
+            outline: 5px solid $color_face
+        &::after
+            right: 21px
+            transform: rotate(45deg)
+        &::before
+            left: 21px
+            transform: rotate(-45deg)
+    .eyes
+        width: 100%
+        height: 100%
+        position: relative
+        &::before, &::after
+            content: ""
+            position: absolute
+            background-color: black
+            width: 10px
+            height: 10px
+            border-radius: 50%
+            top: 50px
+        &::before
+            left: 25px
+        &::after
+            right: 25px
+    .snot
+        position: absolute
+        width: 150px
+        height: 100px
+        background-color: $color_snot
+        top: 70px
+        left: -10px
+        border-radius: 40% 40% 30% 30% / 50% 50% 50% 50%
+        &::before, &::after
+            content: ""
+            position: absolute
+            background-color: black
+            width: 20px
+            height: 30px
+            border-radius: 50%
+            top: 20px
+        &::before
+            left: 25px
+            transform: rotate(45deg)
+        &::after
+            transform: rotate(-45deg)
+            right: 25px

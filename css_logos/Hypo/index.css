@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #191919;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  position: relative;
+  width: 130px;
+  height: 170px;
+}
+
+.container .head {
+  width: 100%;
+  height: 100%;
+  border-radius: 60px;
+  position: relative;
+  background-color: #FE5F55;
+  z-index: 2;
+}
+
+.container .ears {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.container .ears::after, .container .ears::before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 10px;
+  height: 25px;
+  top: -1px;
+  border-radius: 60%;
+  outline: 5px solid #FE5F55;
+}
+
+.container .ears::after {
+  right: 21px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.container .ears::before {
+  left: 21px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.container .eyes {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container .eyes::before, .container .eyes::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 50px;
+}
+
+.container .eyes::before {
+  left: 25px;
+}
+
+.container .eyes::after {
+  right: 25px;
+}
+
+.container .snot {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  background-color: #A64942;
+  top: 70px;
+  left: -10px;
+  border-radius: 40% 40% 30% 30% / 50% 50% 50% 50%;
+}
+
+.container .snot::before, .container .snot::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 20px;
+  height: 30px;
+  border-radius: 50%;
+  top: 20px;
+}
+
+.container .snot::before {
+  left: 25px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.container .snot::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  right: 25px;
+}
+/*# sourceMappingURL=index.css.map */

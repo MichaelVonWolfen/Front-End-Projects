@@ -5,9 +5,15 @@
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 100vh;
 }
 
@@ -17,6 +23,7 @@ div {
   height: 150px;
   position: relative;
 }
+
 div::before {
   position: absolute;
   content: "";
@@ -25,9 +32,10 @@ div::before {
   left: 50%;
   width: 50px;
   height: 50px;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   border-radius: 50%;
-  box-shadow: 0 0 0 50px #243D83, 0 0 0 100px #6592CF;
+  -webkit-box-shadow: 0 0 0 50px #243D83, 0 0 0 100px #6592CF;
+          box-shadow: 0 0 0 50px #243D83, 0 0 0 100px #6592CF;
 }
-
 /*# sourceMappingURL=index.css.map */
