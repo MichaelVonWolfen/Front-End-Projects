@@ -1,0 +1,37 @@
+body {
+  background-color: #D25B70;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: #F7F3DA;
+}
+
+div::before {
+  background-color: #6CB3A9;
+  content: "";
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: -73px;
+  left: -36px;
+  transform: rotate(37deg);
+}
+
+div::after {
+  background-color: #F6DF96;
+  content: "";
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: -96px;
+  right: -32px;
+  transform: rotate(37deg);
+}
+
+/*# sourceMappingURL=index.css.map */

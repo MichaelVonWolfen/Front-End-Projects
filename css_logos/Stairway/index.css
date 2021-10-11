@@ -1,0 +1,40 @@
+body {
+  background-color: #191919;
+}
+
+d {
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  background-color: #4F77FF;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px 50px 0 0;
+}
+
+e, f, g, h {
+  position: absolute;
+  right: 0;
+  background-color: #191919;
+  width: 80%;
+  height: 20px;
+  bottom: 0;
+}
+
+f {
+  bottom: 16%;
+  width: 60%;
+}
+
+g {
+  bottom: 32%;
+  width: 40%;
+}
+
+h {
+  bottom: 48%;
+  width: 20%;
+}
+
+/*# sourceMappingURL=index.css.map */
