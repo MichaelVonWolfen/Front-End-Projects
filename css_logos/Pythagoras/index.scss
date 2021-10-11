@@ -1,0 +1,40 @@
+$bg-color:#D25B70;
+$color1:#F7F3DA;
+$color2:#6CB3A9;
+$color3:#F6DF96;
+$main-size:100px;
+$second-size:80px;
+$third-size:60px;
+$rotation_angle:37deg;
+body{
+  background-color:$bg-color;
+}
+div {
+  width: $main-size;
+  height: $main-size;
+  position:absolute;
+  bottom:50%;
+  left:50%;
+  transform:translate(-50%,50%);
+  background-color:$color1;
+}
+div::before{
+  background-color:$color2;
+  content:"";
+  width:$third-size;
+  height:$third-size;
+  position:absolute;
+  top:-73px;
+  left:-36px;
+  transform:rotate($rotation_angle);
+}
+div::after{
+  background-color:$color3;
+  content:"";
+  width:$second-size;
+  height:$second-size;
+  position:absolute;
+  top:-96px;
+  right:-32px;
+  transform:rotate($rotation_angle);
+}
