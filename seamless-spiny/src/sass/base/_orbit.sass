@@ -3,34 +3,29 @@
 @import "variables"
 @import "animations"
 @import "../abstracts/colors"
-//div>img
 body
   display: grid
   place-content: center
   min-height: 100vh
   position: relative
-  //&::after, &::before
-  //  position: absolute
-  //  left: 50%
-  //  top: 50%
-  //  content: ""
-  //  background-color: deeppink
-  //  width: 1px
-  //  height: 100vh
-  //  aspect-ratio: 1 / 1
-  //  z-index: 99999
-  //  transform: translate(-50%, -50%)
-  //&:before
-  //  width: 100vw
-  //  height: 1px
 .orbit
   position: relative
   .center-image
-    z-index: 99
+    z-index: 1
     width: $image-width
     height: $image-width
     position: absolute
     transform: translate(-50%, -50%)
+    &::before
+      content: ""
+      width: $image-width
+      aspect-ratio: 1/1
+      background-color: #0e2e47
+      position: absolute
+      z-index: 2
+      border-radius: 50px
+      opacity: 1
+      animation: $image-animation
     img
       position: absolute
       transition: opacity $image-opacity-transition-time ease-in
@@ -41,6 +36,7 @@ body
   ul
     position: absolute
     animation: $rotating-animation
+    z-index: 2
     &:hover
       animation-play-state: paused
       --animation-state: paused
@@ -48,21 +44,37 @@ body
       position: absolute
       display: grid
       place-content: center
-      z-index: 9999
-      width: $image-width /2
-      height: $image-width /2
+      z-index: 2
+      width: 15px
+      opacity: 0
+      aspect-ratio: 1/1
       @for $i from 1 to length($colors)
         &:nth-child(#{$i})
-          transform: translate(calc(#{math.sin($angle * $i) * $radius} - 50%), calc(#{math.cos($angle * $i) * $radius} - 50%))
+          --start-x-axis-offset: calc(#{math.round(math.sin($angle * $i) * -$radius / 5)} - 50%)
+          --start-y-axis-offset: calc(#{math.round(math.cos($angle * $i) * -$radius / 5)} - 50%)
+          --offset-x-axis-offset: calc(#{math.round(math.sin($angle * $i) * -$radius * 1.2)} - 50%)
+          --offset-y-axis-offset: calc(#{math.round(math.cos($angle * $i) * -$radius * 1.2)} - 50%)
+          --x-axis-offset: calc(#{math.round(math.sin($angle * $i) * -$radius)} - 50%)
+          --y-axis-offset: calc(#{math.round(math.cos($angle * $i) * -$radius)} - 50%)
+
+          transform: translate(var(--start-x-axis-offset), var(--start-y-axis-offset))
           $color: nth($colors, $i)
           --color: #{$color}
           --color-dark: #{color.adjust($color, $lightness: -40%)}
+          animation: $initialization_animation #{$i * $throbbing-delay}
           div
-            animation: $throbbing-animation #{$i * $throbbing-delay}
+            @if(random(100) < 50)
+              animation: $throbbing-animation #{$i * $throbbing-delay + $initialization_animation-timer + random(300ms)}
+            @else
+              animation: $throbbing-animation #{$i * $throbbing-delay + $initialization_animation-timer - random(300ms)}
+            img
+              animation: $icon-reveal-animation #{$i * $throbbing-delay + $initialization_animation-timer / 2}, $reverse-rotating-animation-no-delay #{$initialization_animation-timer}
+              animation-play-state: var(--animation-state, running)
       div
         z-index: 1
         background-color: var(--color)
-        padding: 30px
+        display: grid
+        place-content: center
         border-radius: 50%
         position: relative
         transition: background-color ease-in-out $list-item-transition-time
@@ -72,13 +84,12 @@ body
         &:hover
           animation-play-state: paused
         img
+          opacity: 0
           transition: opacity ease-in-out $list-item-transition-time
-          animation: $reverse-rotating-animation
-          animation-play-state: var(--animation-state, running)
         &:hover
           background-color: var(--color-dark)
           img
-            opacity: 0
+            opacity: 0!important
           &:before
             opacity: 1
         &::before

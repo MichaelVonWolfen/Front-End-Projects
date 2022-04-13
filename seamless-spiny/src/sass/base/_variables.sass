@@ -1,15 +1,25 @@
 $rotation-time: 20s
-$throbbing-time: 2s
+$throbbing-time: 1500ms
 $throbbing-delay: 122ms
+$list-item-transition-time: 500ms
 $image-opacity-transition-time: 500ms
 $image-width:200px
 
-$rotating-animation: rotate-keyframes $rotation-time infinite linear
+$initialization_animation-timer: 2s
+$initialization_animation: popIn-Li-keyframes $initialization_animation-timer linear forwards
+
+$rotating-animation: rotate-keyframes $rotation-time infinite linear $initialization_animation-timer
+$rotating-animation-no-delay: rotate-keyframes $rotation-time infinite linear
 $reverse-rotating-animation: $rotating-animation reverse
+$reverse-rotating-animation-no-delay: $rotating-animation-no-delay reverse
+
 $throbbing-animation: throbbing-keyframes $throbbing-time infinite both linear
-$list-item-transition-time: 500ms
+
+$icon-reveal-animation: image-show-heyframes 500ms ease-in-out forwards
+
+$image-animation: before-image-keyframes 300ms linear forwards $initialization_animation-timer
 
 //list item properties
 $number-of-list-elements: 8
-$radius: 300px
+$radius: 250px
 $angle: 360deg / $number-of-list-elements

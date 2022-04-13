@@ -8,6 +8,43 @@
   0%
     transform: scale(1)
   50%
-    transform: scale(1.2)
+    transform: scale(1.3)
   100%
     transform: scale(1)
+
+@keyframes popIn-Li-keyframes
+  0%
+    transform: translate(var(--start-x-axis-offset), var(--start-y-axis-offset))
+    width: 15px
+    height: 15px
+    padding: 0
+    opacity: 0.5
+  50%
+    transform: translate(var(--offset-x-axis-offset), var(--offset-y-axis-offset))
+    width: $image-width / 2
+    height: $image-width / 2
+    opacity: 1
+  70%
+    transform: translate(var(--offset-x-axis-offset), var(--offset-y-axis-offset))
+    width: $image-width / 2
+    height: $image-width / 2
+    opacity: 1
+  100%
+    transform: translate(var(--x-axis-offset), var(--y-axis-offset))
+    width: $image-width / 2
+    height: $image-width / 2
+    opacity: 1
+
+@keyframes image-show-heyframes
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes before-image-keyframes
+  0%
+    opacity: 1
+    z-index: 2
+  100%
+    opacity: 0
+    z-index: 0
