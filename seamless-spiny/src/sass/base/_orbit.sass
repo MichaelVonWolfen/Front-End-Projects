@@ -1,0 +1,97 @@
+@use 'sass:math'
+@use "sass:color"
+@import "variables"
+@import "animations"
+@import "../abstracts/colors"
+//div>img
+body
+  display: grid
+  place-content: center
+  min-height: 100vh
+  position: relative
+  //&::after, &::before
+  //  position: absolute
+  //  left: 50%
+  //  top: 50%
+  //  content: ""
+  //  background-color: deeppink
+  //  width: 1px
+  //  height: 100vh
+  //  aspect-ratio: 1 / 1
+  //  z-index: 99999
+  //  transform: translate(-50%, -50%)
+  //&:before
+  //  width: 100vw
+  //  height: 1px
+.orbit
+  position: relative
+  .center-image
+    z-index: 99
+    width: $image-width
+    height: $image-width
+    position: absolute
+    transform: translate(-50%, -50%)
+    img
+      position: absolute
+      transition: opacity $image-opacity-transition-time ease-in
+      width: $image-width
+      aspect-ratio: 1 / 1
+      &:last-child:hover
+        opacity: 0
+  ul
+    position: absolute
+    animation: $rotating-animation
+    &:hover
+      animation-play-state: paused
+      --animation-state: paused
+    li
+      position: absolute
+      display: grid
+      place-content: center
+      z-index: 9999
+      width: $image-width /2
+      height: $image-width /2
+      @for $i from 1 to length($colors)
+        &:nth-child(#{$i})
+          transform: translate(calc(#{math.sin($angle * $i) * $radius} - 50%), calc(#{math.cos($angle * $i) * $radius} - 50%))
+          $color: nth($colors, $i)
+          --color: #{$color}
+          --color-dark: #{color.adjust($color, $lightness: -40%)}
+          div
+            animation: $throbbing-animation #{$i * $throbbing-delay}
+      div
+        z-index: 1
+        background-color: var(--color)
+        padding: 30px
+        border-radius: 50%
+        position: relative
+        transition: background-color ease-in-out $list-item-transition-time
+        color: white
+        width: inherit
+        aspect-ratio: 1/1
+        &:hover
+          animation-play-state: paused
+        img
+          transition: opacity ease-in-out $list-item-transition-time
+          animation: $reverse-rotating-animation
+          animation-play-state: var(--animation-state, running)
+        &:hover
+          background-color: var(--color-dark)
+          img
+            opacity: 0
+          &:before
+            opacity: 1
+        &::before
+          transition: opacity $list-item-transition-time ease-in-out
+          content: attr(text)
+          position: absolute
+          text-align: center
+          width: 100px
+          height: 100px
+          left: 0
+          top: 0
+          display: grid
+          place-content: center
+          animation: $reverse-rotating-animation
+          opacity: 0
+          animation-play-state: var(--animation-state, running)
