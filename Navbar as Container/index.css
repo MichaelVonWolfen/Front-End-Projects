@@ -1,0 +1,63 @@
+* > * {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: darkslategrey;
+  position: relative;
+}
+
+nav {
+  background: white;
+  display: flex;
+  justify-content: right;
+}
+nav.mobile {
+  display: none;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+  padding: 20px 30px;
+}
+nav a:hover {
+  background-color: lightgray;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  background-color: #6e2f74;
+  height: 100vh;
+  overflow: hidden;
+  right: 0;
+  transition: 1s ease-in-out transform;
+}
+
+@media screen and (max-width: 1000px) {
+  nav {
+    display: none;
+  }
+  nav.mobile {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 15vh 10vw;
+  }
+  nav.mobile a {
+    width: 20vw;
+    text-align: center;
+  }
+
+  main {
+    transform: scale(0.8) translateX(-40%);
+    cursor: pointer;
+  }
+  main.reveal {
+    transform: scale(1) translateX(0);
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

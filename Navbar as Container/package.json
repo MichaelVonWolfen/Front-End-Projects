@@ -1,0 +1,15 @@
+{
+  "name": "navbar-as-container",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass --watch index.sass index.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.50.0"
+  }
+}
